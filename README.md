@@ -4,6 +4,8 @@ I created this method since i tried to develop EverShop in AWS free tier, and th
 
 ### ! **Disclaimer**: This method is Unsafe for actual selling, The App's Database data and Admin login are too common !
 
+![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/aws-start.png?raw=true)
+
 ```sql
 CREATE USER evershop WITH PASSWORD 'evershop';
 ```
