@@ -59,25 +59,29 @@ I created this method since i tried to develop EverShop in AWS free tier, and th
 > And thats it! You successfully connected to your new Instance
 > ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/instance-shell.png?raw=true)
 >
+> ### Back to AWS services
+> Get back to AWS services and select **ECS**
+> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/db-start.png?raw=true)
 > 
+> ### Create a Database
+> Scroll down a bit and hit "**Create database**"
+> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/db-down.png?raw=true)
 > 
+> ### Configuring Database
+>
+> Select the "**PostgreSQL**" option
+> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/db-type.png?raw=true)
 > 
+> Now make sure the free tier is selected and give a name for your database (Could really be anything, it doesent matter much)
+> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/db-identifier.png?raw=true)
 > 
+> Now insert the database default user as **evershop** as well as its password (**evershop** too)
+> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/db-user.png?raw=true)
 > 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
+> Then at last, connect it to your Instance
+> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/db-security.png?raw=true)
+>
+> Now u can keep following the tutorial
 
 </details>
 
