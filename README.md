@@ -54,12 +54,30 @@ I created this method since i tried to develop EverShop in AWS free tier, and th
 > ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/instance-created.png?raw=true)
 >
 > Right here it is prety much everithing configured for default, so just hit the "**Connect**" button (Remember to grab this "**IPv4**")
-> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/instance-conect.png?raw=true)
+> ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/instance-connect.png?raw=true)
 >
 > And thats it! You successfully connected to your new Instance
 > ![AWS Start Page](https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/blob/main/media/instance-shell.png?raw=true)
 >
-> Now you can continue to follow the tutorial
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
 
 </details>
 
@@ -83,11 +101,6 @@ I created this method since i tried to develop EverShop in AWS free tier, and th
 > (This will take a while, be patient)
 > ```bash
 > sudo apt-get install nodejs npm -y
-> ```
->
-> ### Installing PostgreSQL
-> ```bash
-> sudo apt-get install postgresql -y
 > ```
 > 
 > ### Installing Nginx
@@ -139,20 +152,78 @@ I created this method since i tried to develop EverShop in AWS free tier, and th
 <details>
 <summary> Setting up EverShop </summary>
 
-> ## Instance Preparation
+> ### Loggin in as Super User
+>
+> Firstly we need to change the root password
+> ```bash
+> sudo passwd
+> ```
+> Then insert the new password, and insert it again for confirmation
+>
+> Now login as Super User
+> ```bash
+> su
+> ```
+> And then insert the password to login successfully
+>
+> Now return to the Super User **directory**
+> ```bash
+> cd
+> ```
+>
+> ### Getting Files
+>
+> Download the files using the following command
+> ```bash
+> wget https://github.com/PedroWoicoleskoCrespo/HowTo-EverShop/raw/refs/heads/main/evershop.zip
+> ```
+>
+> Unzip the files (This will take a little while)
+> ```bash
+> unzip evershop.zip
+> ```
+>
+> Now u can get rid of the zip file
+> ```bash
+> rm evershop.zip
+> ```
+>
+> ### Setting up the Database
+>
+> Login as the default user on the Database using the following command
+> ```bash
+> sudo -u postgres psql
+> ```
+>
+> Create the EverShop user
+> ```sql
+> CREATE USER evershop WITH PASSWORD 'evershop';
+> ```
+> 
+> Create the EverShop database
+> ```sql
+> CREATE DATABASE evershop;
+> ```
+>
+> Grant the user access to the database
+> ```sql
+> GRANT ALL PRIVILEGES ON DATABASE evershop TO evershop;
+> ```
+>
+> Transfer the database ownership to the user
+> ```sql
+> ALTER DATABASE evershop OWNER TO evershop;
+> ```
+>
+> Import database content
+> ```sql
+> \! psql -U evershop -d evershop -f /root/evershop-db.sql -W
+> ```
 
 </details>
 
 admin@admin.com
 admin123
-
-
-
-```bash
-sudo apt-get update
-sudo apt-get upgrade -y
-```
-
 
 
 ```bash
@@ -163,25 +234,4 @@ npm run user:changePassword -- --email "admin@admin.com" --password "SOMETHING A
 npm run user:changePassword -- --email "superuser email" --password "new password"
 ```
 
-
-
-```sql
-CREATE USER evershop WITH PASSWORD 'evershop';
-```
-
-```sql
-CREATE DATABASE evershop;
-```
-
-```sql
-GRANT ALL PRIVILEGES ON DATABASE evershop TO evershop;
-```
-
-```sql
-ALTER DATABASE evershop OWNER TO evershop;
-```
-
-```sql
-\! psql -U evershop -d evershop -f /path/to/evershop-db.sql -W
-```
 - Remember to change the path to your file
