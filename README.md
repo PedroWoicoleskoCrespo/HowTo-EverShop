@@ -221,8 +221,14 @@ I created this method since i tried to develop EverShop in AWS free tier, and th
 >
 > Import database content
 > ```sql
-> \! psql -U evershop -d evershop -f /root/evershop-db.sql -W
+> psql -h yourdb_ip -U evershop -d evershop < /root/evershopdb.pgsql
 > ```
+
+# .env
+
+# chmod +x node_modules/.bin/evershop
+
+# Database disable ssl
 
 </details>
 
