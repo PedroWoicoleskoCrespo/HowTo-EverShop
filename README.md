@@ -20,8 +20,8 @@ You will need an account on a hosting service, and you will be required to put i
 
 ### Recommended Hosting Services (With **Free Tier**/**Free Trial**)
 
--   [Amazon Web Services (AWS)](https://aws.amazon.com/free/)
--   [Digital Ocean](https://www.digitalocean.com/)
+-   <a href="https://aws.amazon.com/free/" target="_blank">Amazon Web Services (AWS)</a>
+-   <a href="https://www.digitalocean.com/" target="_blank">Digital Ocean</a>
 
 </br>
 
